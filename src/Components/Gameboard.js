@@ -1,8 +1,5 @@
 import React from 'react';
 
-// Import React bootstrap Button
-import Button from "react-bootstrap/Button";
-
 // Import images
 import Flag from '../redFlag.png';
 import Mine from '../mineImg.png';
@@ -45,7 +42,7 @@ class Gameboard extends React.Component {
             numOfFlags: 0,
             numOfMines: 0,
             scoreArray: 0,
-            wonOrLostMsg: 0,
+            wonOrLostMsg: "in play",
             arrayCreated: false,
 
             /* blockArray is an array of objects. Each object represents a block on the board, and contains the status 
@@ -189,7 +186,7 @@ class Gameboard extends React.Component {
     exposeBlock(index) {
 
         // If statement to block clicks if the game has already been won or lost.
-        if (this.state.wonOrLostMsg === 0) {
+        if (this.state.wonOrLostMsg === "in play") {
             // use slice() to create temporary clone of blockArray (array with all info about each block) to 
             // work on
             let newArray = this.state.blockArray.slice();
@@ -272,7 +269,7 @@ class Gameboard extends React.Component {
         // Create array of only the id's of the all items in blockArray (the array of objects that represents each 
         // block on the game board)
         let array = blockArray.map(item => 
-                {return item.id}  
+            {return item.id} 
         );
 
         /* Learned to subtract one array from another here:
@@ -320,7 +317,7 @@ class Gameboard extends React.Component {
     placeFlag(index) {
 
         // Only allow clicks if game is still in play (has not already been won or lost)
-        if (this.state.wonOrLostMsg === 0) {
+        if (this.state.wonOrLostMsg === "in play") {
 
             // use slice() to create temporary clone of blockArray to work on
             let newArray = this.state.blockArray.slice();
@@ -446,7 +443,7 @@ class Gameboard extends React.Component {
             let state = true;
 
             // Create variable to update wonorlost message below
-            let msg = 0;
+            let msg = "in play";
 
             // Update state variables blockArray with objects, arrayCreated and sizeOfBoard variables 
             this.setState({
@@ -470,7 +467,7 @@ class Gameboard extends React.Component {
     displayBoard(side) {
         /* Call function to populate "blockArray" with status of each block (blockArray is an array of objects. Each object in the array represents on block on the game board) */
         
-        if (this.state.divArray.length === 0 || this.state.divArray === null || this.state.wonOrLostMsg === "new") {
+        if (this.state.divArray.length === 0 || this.state.divArray === null || this.state.wonOrLostMsg === "new game") {
             // Use slice() to clone divArray to work on
             let tempArray = [];
 
@@ -492,9 +489,9 @@ class Gameboard extends React.Component {
 
             );
 
-            if (this.state.wonOrLostMsg === "new") {
-                let msg = 0;
-                this.setState({wonOrLostMsg: msg}, () => console.log("won or lost msg reset to 0"));
+            if (this.state.wonOrLostMsg === "new game") {
+                let msg = "in play";
+                this.setState({wonOrLostMsg: msg}, () => console.log("won or lost msg reset to 'in play'"));
             }
 
             // Update divArray with the array of divs we just created
@@ -562,30 +559,7 @@ class Gameboard extends React.Component {
         });
     }
 
-    reset(blockArray, msg) {
-        let array = blockArray.slice();
-
-        for (let i = 0; i <= 81; i++) {
-            if (array[i].blockStatus === "exposed") {
-                array[i].blockStatus = "normal";
-            } 
-
-            if (array[i].flagStatus === true) {
-                array[i].flagStatus = false;
-            } 
-
-        } 
-
-        this.setState({blockArray: array, 
-            wonOrLostMsg: msg}, 
-            () => {
-            console.log("won or lost message is currently: " + this.state.wonOrLostMsg);
-            this.displayBoard(9);
-        })
-        
-    // End of reset function
-    }
-
+   
     render() {
         return (
             <div className="boardAndScore">
@@ -599,18 +573,12 @@ class Gameboard extends React.Component {
                     {this.state.divArray}
                 </div>
                 
-                <div className="scoreAndRestart">
-                    {/* Call component "Scoreboard" to display score */}
-                    {<Scoreboard 
-                        score={this.state.scoreArray} 
-                        resetGame={this.resetGame} />}
-
-                    <Button variant="primary" 
-                        className="restartButton" 
-                        onClick={() => this.reset(this.state.blockArray, "new")}>
-                            Restart game?
-                    </Button>
-                </div> 
+                {/* Call component "Scoreboard" to display score */}
+                {<Scoreboard 
+                    score={this.state.scoreArray} 
+                    resetGame={this.resetGame} 
+                    gameState={this.state.wonOrLostMsg} 
+                    blockArray= {this.state.blockArray} />}
 
                 {<WonOrLost 
                     resetGame={this.resetGame} 

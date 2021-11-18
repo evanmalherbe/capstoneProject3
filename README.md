@@ -1,4 +1,4 @@
-# HyperionDev Full Stack Web Development Bootcamp - React task - Level 2 - Task 12 - Capstone project = Minesweeper game
+# HyperionDev Full Stack Web Development Bootcamp - React task - Level 2 - Task 12 - Capstone project - Minesweeper game
 
 ## Description
 This task is my recreation of the traditional "Minesweeper" computer game using React.
@@ -46,10 +46,10 @@ This project uses:
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 To run this project, do the following:
-1. Copy the directory called 'minesweeper' to your local machine.
-2. Navigate to this directory from the command line interface. E.g. cd c:/example.
+1. Copy the directory called 'capstoneProject3' to your local machine.
+2. Navigate to this directory from the command line interface. E.g. cd c:/capstoneProject3.
 3. In the command line interface type 'npm install'
-4. Once it has finished installing, type 'npm start'. Runs the app in the development mode.
+4. Once it has finished installing, type 'npm start'. This runs the app in the development mode.
 5. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Usage 

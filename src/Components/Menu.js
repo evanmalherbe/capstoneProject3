@@ -18,5 +18,5 @@ function Menu () {
     );
 }
 
-// Export component so it can be used by App.js
+// Export component so it can be used by Header component
 export default Menu;
