@@ -1,0 +1,307 @@
+/* Styles for React task - Level 2 task 12 - Capstone project - Minesweeper game */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Header styles ----------------------------------*/
+.logoImg {
+  height: 3rem;
+  /* Learned about pointer events here:
+  https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events */
+  pointer-events: none;
+}
+
+.header h1 {
+  margin: 0rem 1rem;
+}
+
+.header {
+  height: 5rem;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  font-size: 1rem;
+  color: black;
+
+  border-bottom: 1px solid #e9e1e1;
+}
+
+.heading {
+  display: flex;
+  flex-direction: row;
+  margin-left: 2rem;
+
+}
+
+.helpLink {
+
+  text-decoration: none;
+  color: black;
+  font-size: 1.2rem;
+  margin-right: 1.5rem;
+
+}
+
+/* End of header styles ---------------------------------*/
+
+/* Styling for Menu */
+.menuDiv {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-left: 10rem;
+}
+
+.menuDiv ul {
+  margin: 0;
+  padding: 0;
+
+}
+
+.menuDiv li {
+  display: inline;
+  margin: 0rem 1rem;
+
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: blue;
+}
+
+.menuDiv a {
+  text-decoration: none;
+}
+
+.menuDiv a:hover {
+  text-decoration: underline;
+}
+
+/* End of styling for menu ------------------------------*/
+
+/* Styling for gameboard */
+.boardAndScore {
+  display: flex;
+  flex-direction: row;
+}
+
+.gameBoard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  min-width: 31rem;
+  margin-top: 2rem;
+  margin-left: 27rem;
+  margin-bottom: 3rem;
+
+  padding: 0.1rem;
+
+  background-color: #007bff;
+  border: 1px solid #413e3e;
+}
+
+.gameBoard div:hover {
+  border: 2px solid black;
+}
+
+.normalBlock {
+  background-color: #dddddd;
+
+}
+
+.exposedBlock {
+  background-color: #5daafd;
+
+}
+
+.block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 3.1rem;
+  height: 3.1rem;
+
+  margin: 2px;
+  border: 1px solid #413e3e;
+}
+
+/* Styling of images of flags, 
+mines and number hints */
+.flagImg {
+  width: 1.4rem;
+}
+
+.mineImg {
+  width: 2.1rem;
+}
+
+.number1Img {
+  width: 1.9rem;
+}
+
+.number2Img {
+  width: 1.5rem;
+}
+
+/* End of styling for gameboard ---------------------------------- */
+
+/* Styling for Scoreboard */
+.scoreAndRestart {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.scoreAndRestart .restartButton {
+  margin-top: 1rem;
+  margin-left: 11rem;
+}
+
+.scoreboard {
+
+  margin-top: 2rem;
+  margin-left: 10rem;
+  margin-right: 1rem;
+
+  min-width: 15rem;
+  height: 15rem;
+
+  background-color: #007bff;
+  border: 1px solid #413e3e;
+}
+
+.innerBoard {
+  display: flex;
+  flex-direction: column;
+  margin: 0.3rem;
+  padding: 0.5rem;
+
+  height: 14.2rem;
+  background-color: #dddddd;
+  border: 1px solid #413e3e;
+}
+
+.scoreboard h2 {
+  color: blue;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.scoreboard p {
+  margin: 0;
+}
+/* End of styling for scoreboard */
+
+/* Styles for won or lost message */
+.wonOrLost {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: absolute;
+  left: 22rem;
+  top: 16rem;
+
+  max-width: 50rem;
+
+  background-color: white;
+  padding: 2rem;
+  border: 1px solid blue;
+}
+
+/* h1 message of "Game Over!" */
+.lost {
+  font-size: 7rem;
+  color: red;
+}
+
+/* h1 message of "You Won the Game !" */
+.won {
+  font-size: 4.5rem;
+  color: green;
+}
+
+.restartButton {
+  width: 12rem;
+
+}
+
+.column {
+  position: static;
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid red;
+}
+/* End of styling for won or lost message */
+
+/* Styles for welcome component */
+.welcome {
+  display: flex;
+  justify-content: center;
+  width: 40rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 5rem;
+
+}
+
+.welcome h1 {
+  color: blue;
+  font-size: 2rem;
+  text-align: center;
+}
+/* end of styling for welcome component ---------------------------------*/
+
+/* Styles for Help page */
+.helpDiv {
+  display: flex;
+  flex-direction: column;
+
+  padding: 2rem 10rem;
+}
+
+.helpDiv img {
+  width: 3rem;
+  margin-left: 1rem;
+}
+
+.helpDiv .flag {
+  width: 2rem;
+  margin-left: 1rem;
+}
+
+.paraAndImg {
+  display: flex;
+  flex-direction: row;
+}
+
+.helpDiv .helpImg1 {
+  flex: 1;
+  margin-left: 1rem;
+}
+
+.helpDiv .helpImg2 {
+  flex: 1;
+  margin-left: 1rem;
+}
+
+.helpDiv .para {
+  flex: 5;
+}
+
+.helpDiv .numbers {
+  width: 2rem;
+  margin-left: 1rem;
+}
+
+.headingAndImg {
+  display: flex;
+  flex-direction: row;
+
+}
+/* End of help page styles ---------------------------------*/
