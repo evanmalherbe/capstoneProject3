@@ -2,7 +2,9 @@
 
 ## Description
 
-This task is my recreation of the traditional "Minesweeper" computer game using "Create React app". It also has a detailed "Help" page. The website has been deployed with Heroku to: [https://secret-inlet-96684.herokuapp.com/](https://secret-inlet-96684.herokuapp.com/).
+This task is my recreation of the traditional "Minesweeper" computer game using "Create React app". It also has a detailed "Help" page. 
+
+(**Update as at 4 Oct 2025**: Heroku no longer offers their free tier, so this link is dead. I will find somewhere else to deploy this project soon). ~~The website has been deployed with Heroku to: [https://secret-inlet-96684.herokuapp.com/](https://secret-inlet-96684.herokuapp.com/).~~
 
 ## Table of Contents
 
