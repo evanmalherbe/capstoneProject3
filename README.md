@@ -6,6 +6,8 @@ This task is my recreation of the traditional "Minesweeper" computer game using 
 
 (**Update as at 4 Oct 2025**: Heroku no longer offers their free tier, so this link is dead. I will find somewhere else to deploy this project soon). ~~The website has been deployed with Heroku to: [https://secret-inlet-96684.herokuapp.com/](https://secret-inlet-96684.herokuapp.com/).~~
 
+**New Vercel link:** [https://minesweeper-livid-beta.vercel.app](https://minesweeper-livid-beta.vercel.app) - Added 4 Oct 2025 
+
 ## Table of Contents
 
 - [Instructions](#instructions)
